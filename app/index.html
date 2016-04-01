@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="min-width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <title>Form Test</title>
+  <link rel="stylesheet" href="./css/main.css">
+</head>
+<body>
+  <section class="container">
+    <form action="" class="signUp">
+      <button class="signUp__social _fb">sign up with facebook</button>
+      <button class="signUp__social _google">sign up with google</button>
+      <legend class="signUp__legend">
+        <span class="signUp__legendInner">
+          <span class="signUp__legendInnerLeft"></span>
+          <span class="signUp__legendInnerContent">or</span>
+          <span class="signUp__legendInnerRight"></span>
+        </span>
+      </legend>
+      <div class="signUp__field">
+        <input class="signUp__fieldInput _email" type="email" name="email" id="email">
+        <label class="signUp__fieldLabel" for="email">Email</label>
+      </div>
+      <div class="signUp__field">
+        <input class="signUp__fieldInput _password" type="password" name="password" id="password">
+        <label class="signUp__fieldLabel" for="password">Password</label>
+      </div>
+      <input class="signUp__signbtn" type="submit" value="Sign Up">
+      <div class="text">Have an account?<br>
+        <span class="text__switch _login">Log In</span>
+      </div>
+    </form>
+    <div class="login">
+      <h1 class="login__heading">Rainy</h1>
+      <h2 class="login__smheading">cloud client for iOS</h2>
+      <form action="" class="login__form">
+        <div class="login__formField">
+          <input type="email" name="email" id="email" class="login__formFieldInput _email">
+          <label for="email" class="login__formFieldLabel">Email</label>
+        </div>
+        <div class="login__formField">
+          <input type="password" name="password" id="password" class="login__formFieldInput _password">
+          <label for="password" class="login__formFieldLabel">Password</label>
+        </div>
+        <input class="login__formSubmit" type="submit" value="Log In">
+        <div class="text">Don't have an account?<br>
+          <span class="text__switch _signup">Sign up</span>
+        </div>
+      </form>
+    </div>
+  </section>
+  <script src="./js/main.js"></script>
+</body>
+</html>

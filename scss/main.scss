@@ -1,0 +1,208 @@
+@font-face {
+  font-family: HelveticaNeueCyr-Light;
+  src: url(../fonts/HelveticaNeueCyr-Light.otf)
+}
+
+@font-face {
+  font-family: HelveticaNeueCyr-Roman;
+  src: url(../fonts/HelveticaNeueCyr-Roman.otf)
+}
+
+$accidental-ff: 'HelveticaNeueCyr-Light', Arial, sans-serif;
+$grey: rgba(255, 255, 255, 0.7);
+$green: #08c1c6;
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 320px;
+  height: 480px;
+  background: #495056;
+}
+
+
+//***********SIGN UP
+//********************
+
+.signUp {
+  display: none;
+  width: 271px;
+
+  &__social {
+    width: 100%;
+    height: 44px;
+    font: 400 18px/18px $accidental-ff;
+    color: #fff;
+    text-transform: capitalize;
+    border: none;
+    border-radius: 4px;
+    margin-bottom: 24px;
+    cursor: pointer;
+
+    &._fb {
+      background: #2761cb;
+
+      &:hover {
+        background: #365898;
+      }
+    }
+
+    &._google {
+      background: #da3726;
+      margin-bottom: 40px;
+
+      &:hover {
+        background: #a94338;
+      }
+    }
+  }
+
+  &__legend {
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    overflow: hidden;
+  }
+
+  &__legendInner {
+    display: block;
+    overflow: hidden;
+    text-align: center;
+  }
+
+  &__legendInnerLeft,
+  &__legendInnerRight {
+    display: inline-block;
+    vertical-align: middle;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);;
+    width: 999px;
+    margin: 0 0 0 -999px;
+  }
+
+  &__legendInnerRight {
+    margin: 0 -999px 0 0;
+  }
+
+  &__legendInnerContent {
+    display: inline-block;
+    vertical-align: middle;
+    font: 300 14px/18px $accidental-ff;
+    color: rgba(255, 255, 255, 0.7);
+  }
+
+  &__field {
+    position: relative;
+    width: 100%;
+    margin-top: 15px;
+  }
+
+  &__fieldInput {
+    display: block;
+    width: 100%;
+    height: 35px;
+    border: none;
+    background: transparent;
+    border-bottom: 1px solid $grey;
+    font: 400 18px/18px $accidental-ff;
+    color: $grey;
+
+    &:focus {
+      outline: none;
+      border-bottom: 1px solid $green;
+    }
+  }
+
+  &__fieldLabel {
+    position: absolute;
+    top: 10px;
+    font: 400 18px/18px $accidental-ff;
+    color: $grey;
+  }
+
+  &__signbtn {
+    width: 100%;
+    height: 44px;
+    margin-top: 45px;
+    border: none;
+    border-radius: 4px;
+    background: $green;
+    font: 500 18px/18px $accidental-ff;
+    color: #fff;
+    cursor: pointer;
+
+    &:hover {
+      background: #39aaad;
+    }
+  }
+}
+
+.text {
+  margin-top: 15px;
+  text-align: center;
+  font: 400 14px/18px $accidental-ff;
+  color: $grey;
+
+  &__switch {
+    text-decoration: none;
+    font-weight: bold;
+    color: $green;
+  }
+}
+
+
+//***************LOG IN
+//**********************
+
+.login {
+  width: 271px;
+  text-align: center;
+
+  &__heading {
+    font: 400 36px/18px $accidental-ff;
+    color: #07a0a5;
+  }
+
+  &__smheading {
+    font: 400 20px/18px $accidental-ff;
+    color: #07a0a5;
+    margin-bottom: 70px;
+  }
+
+  &__form {
+    width: 100%;
+  }
+
+  &__formField {
+    @extend .signUp__field;
+    margin-bottom: 35px;
+  }
+
+  &__formFieldInput {
+    @extend .signUp__fieldInput;
+
+    &:focus + .login__formFieldLabel,
+    &._notempty + .login__formFieldLabel {
+      font-size: 14px;
+      color: #18a5aa;
+      top: -20px;
+    }
+  }
+
+  &__formFieldLabel {
+    @extend .signUp__fieldLabel;
+    left: 10px;
+    transition: font-size .2s ease-in-out,
+      top .2s ease-in-out;
+  }
+
+  &__formSubmit {
+    @extend .signUp__signbtn;
+    margin-top: 10px;
+  }
+}
