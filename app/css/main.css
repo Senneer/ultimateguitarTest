@@ -20,6 +20,8 @@ body
 
 .container
 {
+    position: relative;
+
     display: -webkit-flex;
     display: -ms-flexbox;
     display:         flex;
@@ -101,7 +103,7 @@ body
 
     vertical-align: middle;
 
-    border-top: 1px solid rgba(255, 255, 255, .3);
+    border-top: 1px solid #808589;
 }
 .signUp__legendInnerRight
 {
@@ -115,7 +117,7 @@ body
 
     vertical-align: middle;
 
-    color: rgba(255, 255, 255, .7);
+    color: #808589;
 }
 .signUp__field,
 .login__formField
@@ -135,9 +137,9 @@ body
     width: 100%;
     height: 35px;
 
-    color: rgba(255, 255, 255, .7); 
+    color: #b6b9bb; 
     border: none;
-    border-bottom: 1px solid rgba(255, 255, 255, .7);
+    border-bottom: 1px solid #d1d3d5;
     background: transparent;
 }
 .signUp__fieldInput:focus,
@@ -154,7 +156,7 @@ body
     position: absolute;
     top: 10px;
 
-    color: rgba(255, 255, 255, .7);
+    color: #b6b9bb;
 }
 .signUp__signbtn,
 .login__formSubmit
@@ -186,12 +188,13 @@ body
 
     text-align: center;
 
-    color: rgba(255, 255, 255, .7);
+    color: #b6b9bb;
 }
 .text__switch
 {
     font-weight: bold;
 
+    cursor: pointer; 
     text-decoration: none;
 
     color: #08c1c6;
@@ -230,9 +233,11 @@ body
 {
     font-size: 14px;
 
-    top: -20px; 
+    top: -20px;
 
     color: #18a5aa;
+
+    will-change: font-size, top;
 }
 .login__formFieldLabel
 {
@@ -243,4 +248,104 @@ body
 .login__formSubmit
 {
     margin-top: 10px;
+}
+
+.successmsg
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
+            flex-direction: column;
+
+    transition: opacity .2s ease-in-out; 
+    pointer-events: none;
+
+    opacity: 0;
+    background: #08c1c6;
+
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+            justify-content: center;
+    -webkit-align-items: center;
+    -ms-flex-align: center;
+            align-items: center;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+}
+.successmsg._is-up
+{
+    pointer-events: auto; 
+
+    opacity: 1;
+}
+.successmsg__checkmarkImg
+{
+    stroke-dasharray: 133;
+}
+.successmsg__checkmarkImg._animation
+{
+    -webkit-animation: dash .5s ease-in-out;
+            animation: dash .5s ease-in-out; 
+
+    stroke-dasharray: 133;
+}
+.successmsg__text
+{
+    font: 400 30px 'HelveticaNeueCyr-Light', Arial, sans-serif; 
+
+    color: #fff;
+}
+
+@-webkit-keyframes dash
+{
+    0%
+    {
+        stroke-dashoffset: 133;
+    }
+    100%
+    {
+        stroke-dashoffset: 0;
+    }
+}
+
+@keyframes dash
+{
+    0%
+    {
+        stroke-dashoffset: 133;
+    }
+    100%
+    {
+        stroke-dashoffset: 0;
+    }
+}
+
+@-webkit-keyframes text
+{
+    0%
+    {
+        opacity: 0;
+    }
+    100%
+    {
+        opacity: 1;
+    }
+}
+
+@keyframes text
+{
+    0%
+    {
+        opacity: 0;
+    }
+    100%
+    {
+        opacity: 1;
+    }
 }
