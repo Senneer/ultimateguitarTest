@@ -1,14 +1,23 @@
-const input = document.getElementsByClassName('login__formFieldInput');
+const logininput = Array.prototype.slice.call(document.getElementsByClassName('login__formFieldInput'));
 const container = document.getElementsByClassName('container')[0];
 const loginSubmit = document.getElementsByClassName('login__formSubmit')[0];
 const successmsg = document.getElementsByClassName('successmsg')[0];
-const checkmark = document.getElementsByClassName('successmsg__checkmarkImg')[0];
+const checkmark = document.getElementsByClassName('successmsg__checkmarkPath')[0];
+
+function animation() {
+  successmsg.classList.toggle('_is-up');
+  checkmark.classList.toggle('_animation');
+  setTimeout('successmsg.classList.remove("_is-up")', 2000);
+  setTimeout('checkmark.classList.remove("_animation")', 2000);
+}
 container.addEventListener('click', e => e.stopPropagation());
 
-Array.prototype.forEach.call(input, function (item, i, array) {
-  item.addEventListener ('change', function() {
+logininput.forEach(item => {
+  item.addEventListener('change', function() {
     if (item.value != '') {
-      item.classList.toggle('_notempty');
+      if (item.classList.contains('_notempty') === false) {
+        item.classList.add('_notempty');
+      }
     } else {
       item.className = item.className.replace(' _notempty', '');
     };
@@ -31,18 +40,17 @@ loginToggle.addEventListener ('click', function () {
 });
 
 document.getElementsByClassName("signUp__signbtn")[0].addEventListener("click", function(event){
-    event.preventDefault()
+  event.preventDefault();
+  animation();
 });
 document.getElementsByClassName("_fb")[0].addEventListener("click", function(event){
-    event.preventDefault()
+  event.preventDefault();
 });
 document.getElementsByClassName("_google")[0].addEventListener("click", function(event){
-    event.preventDefault()
+  event.preventDefault();
 });
 
 loginSubmit.addEventListener ('click', function(event) {
-  event.preventDefault()
-  successmsg.classList.toggle('_is-up');
-  checkmark.classList.toggle('_animation');
-  setTimeout('successmsg.classList.remove("_is-up")', 2000);
+  event.preventDefault();
+  animation();
 });

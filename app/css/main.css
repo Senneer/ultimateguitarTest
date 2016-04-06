@@ -284,11 +284,11 @@ body
 
     opacity: 1;
 }
-.successmsg__checkmarkImg
+.successmsg__checkmarkPath
 {
     stroke-dasharray: 133;
 }
-.successmsg__checkmarkImg._animation
+.successmsg__checkmarkPath._animation
 {
     -webkit-animation: dash .5s ease-in-out;
             animation: dash .5s ease-in-out; 
